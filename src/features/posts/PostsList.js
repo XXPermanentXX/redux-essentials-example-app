@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Spinner } from '../../components/Spinner'
 import { PostAuthor } from './PostAuthor'
 import { TimeAgo } from './TimeAgo'
-import { fetchPosts, selectAllPosts } from './postsSlice'
-import { Spinner } from '../../components/Spinner'
 import { ReactionButtons } from './ReactionButtons'
+import { selectAllPosts, fetchPosts } from './postsSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const PostExcerpt = ({ post }) => {
   return (
