@@ -55,8 +55,8 @@ const postsSlice = createSlice({
     },
     postUpdated: {
       reducer(state, action) {
-        const { id, title, content, date } = action.payload
-        const existingPost = state.posts.find((post) => post.id === id)
+        const { postId, title, content, date } = action.payload
+        const existingPost = state.entities[postId]
         if (existingPost) {
           existingPost.title = title
           existingPost.content = content
@@ -66,7 +66,7 @@ const postsSlice = createSlice({
       prepare(postId, title, content) {
         return {
           payload: {
-            id: postId,
+            postId,
             title,
             content,
             date: new Date().toISOString(),
